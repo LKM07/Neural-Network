@@ -18,14 +18,23 @@ The purpose of this project is to test my understanding of neural networks and i
 
 # What I learned
 Through this project, I practiced:
+
 -Python
+
 -Numpy
+
 -Neural Network fundamentals
+
 -Forward propagation
+
 -Backpropagation
+
 -Gradient Descent
+
 -Weights and Biases
+
 -Training a neural network
+
 
 # Purpose
 This repository is part of my learning journey to become an AI Engineer.
