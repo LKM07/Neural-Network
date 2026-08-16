@@ -3,8 +3,11 @@ A simple neural network implementation in Python, created as a learning project.
 
 # Learning Source
 This project was based on "build-your-own-x" on Github.
+
 Github: https://github.com/codecrafters-io/build-your-own-x.git
+
 Tutorial(i am trask): https://iamtrask.github.io/
+
 The original implementation and concepts were studied as part of my learning process.
 
 # My Reimplementation
