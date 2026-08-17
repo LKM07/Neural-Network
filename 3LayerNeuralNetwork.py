@@ -18,6 +18,10 @@ for alpha in alphas:
 
     synapse_0=2*np.random.random((3,4))-1
     synapse_1=2*np.random.random((4,1))-1
+    synapse_0_prevupdate=np.zeros_like(synapse_0)
+    synapse_1_prevupdate=np.zeros_like(synapse_1)
+    synapse_0_direction=np.zeros_like(synapse_0)
+    synapse_1_direction=np.zeros_like(synapse_1)
 
     for iter in range(60000):
         l0=x
@@ -25,6 +29,7 @@ for alpha in alphas:
         l2=sigmoid(np.dot(l1,synapse_1))
 
         l2_error=y-l2
+
         if(iter%10000)==0:
             print("Error after "+str(iter)+" iterations:"+str(np.mean(np.abs(l2_error))))
         l2_delta=l2_error*derivative_output(l2)
@@ -32,5 +37,24 @@ for alpha in alphas:
         l1_error=l2_delta.dot(synapse_1.T)
         l1_delta=l1_error*derivative_output(l1)
 
-        synapse_0 += alpha*np.dot(l0.T,l1_delta)
-        synapse_1 += alpha*np.dot(l1.T,l2_delta)
+        synapse_0_update=np.dot(l0.T,l1_delta)
+        synapse_1_update=np.dot(l1.T,l2_delta)
+
+        if (iter>0):
+            synapse_0_direction+=np.abs(((synapse_0_update>0)+0)-((synapse_0_prevupdate>0)+0))
+            synapse_1_direction+=np.abs(((synapse_1_update>0)+0)-((synapse_1_prevupdate>0)+0))
+
+        synapse_0 += alpha*synapse_0_update
+        synapse_1 += alpha*synapse_1_update
+
+        synapse_0_prevupdate=synapse_0_update
+        synapse_1_prevupdate=synapse_1_update
+
+    print("Synapse 0")
+    print(synapse_0)
+    print("Synapse 0 update direction changes")
+    print(synapse_0_direction)
+    print("Synapse 1")
+    print(synapse_1)
+    print("Synapse 1 update direction changes")
+    print(synapse_1_direction)
