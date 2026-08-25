@@ -31,7 +31,7 @@ Through this project, I practiced:
 
 -Neurons
 
--Forward propagation
+-Forward propagation(Feedforward)
 
 -Backpropagation
 
