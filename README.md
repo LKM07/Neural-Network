@@ -8,6 +8,8 @@ Github: https://github.com/codecrafters-io/build-your-own-x.git
 
 Tutorial(i am trask): https://iamtrask.github.io/
 
+Tutorial(Victor Zhou): https://victorzhou.com/blog/intro-to-neural-networks/#1-building-blocks-neurons
+
 The original implementation and concepts were studied as part of my learning process.
 
 # My Reimplementation
@@ -23,15 +25,25 @@ Through this project, I practiced:
 
 -Numpy
 
+-Created a dataset as inputs(or features) and output(or label)
+
 -Neural Network fundamentals
+
+-Neurons
 
 -Forward propagation
 
 -Backpropagation
 
--Gradient Descent
+-Gradient Descent(Stochastic Gradient Descent(SGD))
+
+-Mean Squared Error(MSE) Loss
+
+-Better predictions = Lower loss
 
 -Weights and Biases
+
+-Connected Neurons and formed Neural Networks
 
 -Training a neural network
 
